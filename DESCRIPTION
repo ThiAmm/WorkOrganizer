@@ -1,12 +1,11 @@
 Package: WorkOrganizer
 Type: Package
-Title: Helps to organise tasks
+Title: WorkOrganizer
 Version: 1.0
 Author: Thilo Ammon
 Maintainer: Thilo Ammon <thiloammon@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Description: Helps to organise tasks. The design of the project is suited for buisness enviroments where IT restricts the use of most commonsoftware and databases.
+License: 
 Encoding: UTF-8
 LazyData: true
 Suggests: 

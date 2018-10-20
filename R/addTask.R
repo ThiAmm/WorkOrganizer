@@ -1,3 +1,9 @@
+#' Add a new task to a \code{taskList}
+#' @param taskId the taskId
+#' @param taskCreator the name of the creator of the task
+#' @param taskDescription a description of the task to do
+#' @param taskDateCreated the date on which the task is created
+#' @param taskDeadline the date on which the task has to be finished
 addTask <-
   function(taskList,
            taskId,
