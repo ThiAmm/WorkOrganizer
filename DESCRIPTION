@@ -4,7 +4,7 @@ Title: WorkOrganizer
 Version: 1.0
 Author: Thilo Ammon
 Maintainer: Thilo Ammon <thiloammon@gmail.com>
-Description: Helps to organise tasks. The design of the project is suited for buisness enviroments where IT restricts the use of most commonsoftware and databases.
+Description: Helps to organise tasks. The design of the project is targeted for buisness enviroments with restrictive software use.
 License: 
 Encoding: UTF-8
 LazyData: true

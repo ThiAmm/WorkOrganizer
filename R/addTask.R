@@ -1,16 +1,21 @@
 #' Add a new task to a \code{taskList}
-#' @param taskId the taskId
+#' @param taskId the taskId (short and meaningful)
 #' @param taskCreator the name of the creator of the task
 #' @param taskDescription a description of the task to do
 #' @param taskDateCreated the date on which the task is created
 #' @param taskDeadline the date on which the task has to be finished
+#' @param taskDateFinished the date on which the task was finished
+#' @examples
+#' getTaskList() %>% addTask("FirstTask",taskId = "SecondName-FirstName",taskDateCreated = "2017-06-06")
 addTask <-
   function(taskList,
            taskId,
            taskCreator = NULL ,
            taskDescription = NULL ,
            taskDateCreated = NULL ,
-           taskDeadline = NULL) {
+           taskDeadline = NULL,
+           taskDateFinished = NULL,
+           projectId = NULL) {
     library(dplyr)
     if (taskId %in% (taskList %>% pull(taskId))) {
       warning("taskId already taken. Please choose another taskId")
@@ -37,6 +42,16 @@ addTask <-
           NA
         } else{
           as.Date(taskDeadline)
+        },
+        taskDateFinished = if (is.null(taskDateFinished)) {
+          NA
+        } else{
+          as.Date(taskDateFinished)
+        },
+        projectId = if (is.null(projectId)) {
+          NA
+        } else{
+          projectId
         }
       )
       bind_rows(taskList, newTask)
