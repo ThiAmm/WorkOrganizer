@@ -3,13 +3,11 @@ listProjects <-
   function(fileNamePattern,
            path = getwd(),
            full.names = FALSE) {
-    unique(sapply(fileNamePattern, function(fileNamePattern) {
-      print(path)
-      list.files(
+    library(dplyr)
+    list.files(
         path = path,
-        pattern = paste0("*", fileNamePattern, "*.csv"),
+        pattern = paste0(fileNamePattern, ".*\\.csv"),
         recursive = TRUE,
-        full.names = full.names
-      )
-    }))
+        full.names = TRUE
+    )
   }
