@@ -1,5 +1,6 @@
 createDependencyGraph <- function(taskList) {
   library(visNetwork)
+  library(purrr)
 
   nodes <- taskList %>% rename(label = taskId,
                       group = projectId) %>% mutate(id = label)
@@ -7,7 +8,7 @@ createDependencyGraph <- function(taskList) {
   edges <- pmap(taskList %>% select(taskId, dependsOn), function(taskId, dependsOn) {
     tibble(
       to = taskId,
-      from = gsub("\\[|\\]", "", dependsOn) %>% strsplit(",") %>% unlist()
+      from = splitBracketCharacter(dependsOn)
     )
   }) %>% bind_rows()
   visNetwork(nodes, edges, width = "100%") %>% visEdges(arrows = 'from')

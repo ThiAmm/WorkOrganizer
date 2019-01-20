@@ -1,0 +1,2 @@
+taskId;taskCreator;taskDescription;taskDateCreated;taskDeadline;taskDateFinished;projectId;expectedOverallWorkTimeInHours;timeWorkedOnTaskInHours.BySections
+"FirstTask";"Mustermann-Max";"This is a task to do";2018-05-18;2018-08-30;2018-08-29;"Project A";5;[2.4,0.5,0.2]

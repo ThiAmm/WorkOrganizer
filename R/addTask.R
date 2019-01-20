@@ -15,7 +15,10 @@ addTask <-
            taskDateCreated = NULL ,
            taskDeadline = NULL,
            taskDateFinished = NULL,
-           projectId = NULL) {
+           projectId = NULL,
+           expectedOverallWorkTimeInHours = NULL,
+           timeWorkedOnTaskInHours.BySections = NULL
+           ) {
     library(dplyr)
     if (taskId %in% (taskList %>% pull(taskId))) {
       warning("taskId already taken. Please choose another taskId")
@@ -52,6 +55,16 @@ addTask <-
           NA
         } else{
           projectId
+        },
+        expectedOverallWorkTimeInHours = if (is.null(expectedOverallWorkTimeInHours)) {
+          NA
+        } else{
+          expectedOverallWorkTimeInHours
+        },
+        timeWorkedOnTaskInHours.BySections = if (is.null(timeWorkedOnTaskInHours.BySections)) {
+          NA
+        } else{
+          timeWorkedOnTaskInHours.BySections
         }
       )
       bind_rows(taskList, newTask)

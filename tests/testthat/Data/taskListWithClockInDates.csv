@@ -1,0 +1,2 @@
+taskId;taskCreator;taskDescription;taskDateCreated;taskDeadline;taskDateFinished
+"FirstTask";"Mustermann-Max";"This is a task to do";2018-05-18 12:45:40;2018-08-30 12:45;2018-08-07
